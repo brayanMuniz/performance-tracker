@@ -1,20 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <h1>Performance Tracker</h1>
+
+    <div class="flex-container">
+      <button v-for="btn in amountOfButtons" :key="btn" style="margin: 10px">
+        Bunch of buttons
+      </button>
+    </div>
+
+    <div class="flex-container">
+      <div style="margin: 10px">Code Here</div>
+      <div style="margin: 10px">Chart showing data Here</div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
 
 @Component({
-  components: {
-    HelloWorld,
-  },
+  components: {},
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  amountOfButtons = 5;
+}
 </script>
 
+<style>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+</style>
 
